@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link href="https://storage.googleapis.com/chydlx/plugins/dlx-quiz/css/main.css" rel="stylesheet">
+{% endblock css %}
+
+{% block style %}
+    <style>
+        .container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: max-content;
+          background: #3b70fc;
+        }
+
+        #quiz1 {
+          width: 660px;
+          background: white;
+          padding: 2rem;
+          border-radius: 3px;
+          margin: 100px 0 100px 0;
+          height: max-content;
+        }
+    </style>
+{% endblock style %}
+
+{% block content %}
+
+    <div class="container" style="background-color: white; margin: 10px;">
+        <div id="quiz1" >
+            <h2>{{ question.question }}</h2>
+            <p style="margin-top:-8px; line-height:1.4">
+                {{ question.full_text }}
+            </p>
+            <a href="{% url 'index' %}"><button><i class="fa fa-chevron-left" aria-hidden="true"></i> Home</button></a>
+        </div>
+        
+    </div>
+{% endblock %}
+

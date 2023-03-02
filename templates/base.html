@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% block css %}
+    {% endblock css %}
+
+    {% block style %}
+    {% endblock style %}
+    <style>
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+        @media screen and (max-width: 720px) {
+        body {
+            font-size: medium;
+        }
+        }
+    </style>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'footer.html' %}
+
+    <script src="{% static 'main.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="https://storage.googleapis.com/chydlx/plugins/dlx-quiz/js/main.js"></script>
+    <script>
+        $("#quiz1").dlxQuiz({
+            quizData: {{ quiz_data }}
+        });
+    </script>
+</body>
+</html>
