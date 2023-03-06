@@ -27,7 +27,6 @@
         .left {
             flex: 35%;
             padding: 15px 0;
-            opacity: 90%;
             height: 1000px;
         }
         
@@ -43,6 +42,8 @@
             background-repeat: no-repeat;
             background-size:cover;
             color: white; */
+            opacity: 80%;
+
         }
 
         .right div {
@@ -162,7 +163,7 @@
             {% for category in categories %}
                 <li>
                     <a href="{{ category.get_absolute_url }}">
-                        {{ category.title }}
+                       <i class="fa fa-bolt" aria-hidden="true"></i> {{ category.title }}
                     </a>
                 </li>
                 <!-- <p>{{ category.description | linebreaks }}</p> -->
