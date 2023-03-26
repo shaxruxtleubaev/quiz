@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, get_object_or_404
 from quiz.models import Category, Quiz, Question, Answer
 from django.utils.safestring import SafeString # Marking something as a "safe string" means that the producer of the string has already turned characters that should not be interpreted by the HTML engine (e.g. '<') into the appropriate entities.

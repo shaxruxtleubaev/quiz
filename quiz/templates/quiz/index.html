@@ -163,7 +163,7 @@
             {% for category in categories %}
                 <li>
                     <a href="{{ category.get_absolute_url }}">
-                       <i class="fa fa-bolt" aria-hidden="true"></i> {{ category.title }}
+                       {{ category.title }}
                     </a>
                 </li>
                 <!-- <p>{{ category.description | linebreaks }}</p> -->
